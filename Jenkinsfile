@@ -4,7 +4,7 @@ pipeline {
         AWS_ACCESS_KEY_ID = credentials('dareen-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('dareen-aws-secret-access-key')
         AWS_S3_BUCKET = "sample-proj"
-        ARTIFACT_NAME = "sample-gradle-project.jar"
+        ARTIFACT_NAME = "sample-gradle.jar"
         AWS_EB_APP_NAME = "gradle-project"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Gradleproject-env"
