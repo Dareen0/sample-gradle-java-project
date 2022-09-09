@@ -34,14 +34,14 @@ pipeline {
             }
             post{
                 success{
-                    archiveArtifacts artifacts: 'build/libs/samplegradle-0.0.1-SNAPSHOT.jar', followSymlinks: false
+                    archiveArtifacts artifacts: 'build/libs/sample-gradle-project.jar', followSymlinks: false
                 }
             }
         }
         stage('Publish artifacts to S3 Bucket') {
             steps {
                 sh "aws configure set region us-east-2"
-                sh "aws s3 cp ./build/libs/samplegradle-0.0.1-SNAPSHOT.jar s3://$AWS_S3_BUCKET/$ARTIFACT_NAME"
+                sh "aws s3 cp ./build/libs/sample-gradle-project.jar s3://$AWS_S3_BUCKET/$ARTIFACT_NAME"
             }
          }
         stage('Deploy') {
