@@ -40,7 +40,7 @@ pipeline {
         }
         stage('Publish artifacts to S3 Bucket') {
             steps {
-                sh "aws configure set region us-east-2"
+                sh "aws configure set region us-east-1"
                 sh "aws s3 cp ./build/libs/sample-gradle-project.jar s3://$AWS_S3_BUCKET/$ARTIFACT_NAME"
             }
          }
